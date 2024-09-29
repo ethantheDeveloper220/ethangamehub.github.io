@@ -35,6 +35,21 @@
     </style>
 </head>
 <body>
+    <script>
+        // Function to prompt for a key on page load
+        window.onload = function() {
+            const correctKey = "beta111111111111"; // Define the correct key
+            let userKey = prompt("Please enter the access key:");
+
+            // Check if the entered key matches the correct key
+            if (userKey !== correctKey) {
+                alert("Access denied! Incorrect key.");
+                // Optionally, redirect to another page or hide the content
+                window.location.href = "https://www.example.com"; // Replace with your desired URL
+            }
+        };
+    </script>
+
     <header>
         <div class="container">
             <h1>Unblocked Games Hub</h1>
@@ -52,93 +67,8 @@
 
     <main>
         <div id="content">
-            <section id="search">
-                <h2>Search for a Game</h2>
-                <input type="text" id="searchInput" placeholder="Type a game name..." onkeyup="searchGames()">
-            </section>
-
-            <section id="featured">
-                <h2>Featured Games</h2>
-                <div class="game-grid" id="gameList">
-                    <div class="game-card" data-game-name="Drive Mad">
-                        <a href="javascript:void(0);" onclick="redirectToGame1()">
-                            <img src="https://th.bing.com/th/id/R.eed5bfa42d81ad17ff82081c175f16a8?rik=YzTIlpiytj%2fW0w&pid=ImgRaw&r=0" alt="Drive Mad">
-                        </a>
-                        <h3>
-                            <a href="javascript:void(0);" onclick="redirectToGame1()">Drive Mad</a>
-                        </h3>
-                    </div>
-
-                    <div class="game-card" data-game-name="RocketBotRoyale">
-                        <a href="https://rocketbotroyale-5.onrender.com/" target="_blank">
-                            <img src="https://static.wixstatic.com/media/d0c5be_340d3a8d80104f39b07a297380a979a0~mv2.png/v1/fill/w_560,h_314,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/rbr-logo.png" alt="RocketBotRoyale">
-                        </a>
-                        <h3>
-                            <a href="https://rocketbotroyale-5.onrender.com/" target="_blank">RocketBotRoyale</a>
-                        </h3>
-                    </div>
-
-                    <div class="game-card" data-game-name="Basket Bros">
-                        <a href="https://bubskqq12.github.io/Basket-moms/" target="_blank">
-                            <img src="https://images.crazygames.com/games/basketbros/cover-1586360611838.jpg?auto=format%2Ccompress&q=45&cs=strip&ch=DPR&w=1200&h=630&fit=crop" alt="Basket Bros">
-                        </a>
-                        <h3>
-                            <a href="https://bubskqq12.github.io/Basket-moms/" target="_blank">Basket Bros</a>
-                        </h3>
-                    </div>
-
-                    <div class="game-card" data-game-name="Slope">
-                        <a href="https://bubskqq12.github.io/Slope-Game/" target="_blank">
-                            <img src="https://th.bing.com/th/id/OIP.1yT2wVchG7yNHCn4r_ozZAHaEo?rs=1&pid=ImgDetMain" alt="Slope Game">
-                        </a>
-                        <h3>
-                            <a href="https://bubskqq12.github.io/Slope-Game/" target="_blank">Slope</a>
-                        </h3>
-                    </div>
-
-                    <div class="game-card" data-game-name="Retro Bowl">
-                        <a href="https://asgfasgasgags.github.io/files/RetroBowl/" target="_blank">
-                            <img src="https://play-lh.googleusercontent.com/3WXh7Wl_4JbShNFswT-Vv2g1H_G3QZfZo4pvcfr9UZfTHyH1V5X3oCEBfBE7sm6DeA=w240-h480-rw" alt="Retro Bowl" style="width: 200px; height: auto;">
-                        </a>
-                        <h3>
-                            <a href="https://asgfasgasgags.github.io/files/RetroBowl/" target="_blank">Retro Bowl</a>
-                        </h3>
-                    </div>
-
-                    <div class="game-card" data-game-name="Cookie Clicker">
-                        <a href="https://asgfasgasgags.github.io/files/CookieClicker/" target="_blank">
-                            <img src="https://play-lh.googleusercontent.com/Z1MOuuiD05ZN5LkVmMEvKF0mqAc-FknaQ2j8s4dZiO-LSPQX4EEA3RVJdlQEtxe96ok" alt="Cookie Clicker" style="width: 200px; height: auto;">
-                        </a>
-                        <h3>
-                            <a href="https://asgfasgasgags.github.io/files/CookieClicker/" target="_blank">Cookie Clicker</a>
-                        </h3>
-                    </div>
-                </div>
-            </section>
-
-            <section id="request-game">
-                <h2>Request a Game</h2>
-                <p>If you would like to suggest a game to add to our collection, please <a href="https://forms.gle/eRrxmaGGgdEAmcdC8" target="_blank">click here to request one!</a></p>
-            </section>
-
-            <section id="other-sites">
-                <h2>Other Sites</h2>
-                <ul>
-                    <li>
-                        <a href="https://asgfasgasgags.github.io/" target="_blank">Unblocked Site One</a>
-                    </li>
-                </ul>
-            </section>
-
-            <section id="categories">
-                <h2>Game Categories</h2>
-                <ul class="category-list">
-                    <li><a href="#action">Action</a></li>
-                    <li><a href="#arcade">Arcade</a></li>
-                    <li><a href="#puzzle">Puzzle</a></li>
-                    <li><a href="#sports">Sports</a></li>
-                </ul>
-            </section>
+            <!-- Your existing content -->
+            ...
         </div>
 
         <div id="error404">
@@ -151,52 +81,5 @@
     <footer>
         <p>&copy; 2024 Unblocked Games. All rights reserved.</p>
     </footer>
-
-    <script>
-        function redirectToGame1() {
-            const encodedURL = 'aHR0cHM6Ly9idWJza3FxMTIuZ2l0aHViLmlvL2RyaXZlLXRpbWU='; // Base64 encoded URL
-            window.location.href = atob(encodedURL);
-        }
-
-        function searchGames() {
-            const input = document.getElementById('searchInput').value.toLowerCase();
-            const gameList = document.getElementById('gameList');
-            const games = gameList.getElementsByClassName('game-card');
-
-            for (let i = 0; i < games.length; i++) {
-                const gameName = games[i].getAttribute('data-game-name').toLowerCase();
-                if (gameName.includes(input)) {
-                    games[i].style.display = ""; // Show game
-                } else {
-                    games[i].style.display = "none"; // Hide game
-                }
-            }
-        }
-
-        // Check if the section exists and show 404 error if not
-        window.onload = function() {
-            const hash = window.location.hash.substring(1);
-            const content = document.getElementById('content');
-            const error404 = document.getElementById('error404');
-
-            if (hash && !document.getElementById(hash)) {
-                content.style.display = 'none'; // Hide main content
-                error404.style.display = 'block'; // Show 404 error
-            } else {
-                error404.style.display = 'none'; // Hide 404 error
-            }
-        };
-
-        window.onhashchange = function() {
-            const hash = window.location.hash.substring(1);
-            const content = document.getElementById('content');
-            const error404 = document.getElementById('error404');
-
-            if (hash && !document.getElementById(hash)) {
-                content.style.display = 'none'; // Hide main content
-                error404.style.display = 'block'; // Show 404 error
-            }
-        };
-    </script>
 </body>
 </html>
