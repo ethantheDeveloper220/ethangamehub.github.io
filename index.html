@@ -22,10 +22,15 @@
     </header>
 
     <main>
+        <section id="search">
+            <h2>Search for a Game</h2>
+            <input type="text" id="searchInput" placeholder="Type a game name..." onkeyup="searchGames()">
+        </section>
+
         <section id="featured">
             <h2>Featured Games</h2>
-            <div class="game-grid">
-                <div class="game-card">
+            <div class="game-grid" id="gameList">
+                <div class="game-card" data-game-name="Drive Mad">
                     <a href="javascript:void(0);" onclick="redirectToGame1()">
                         <img src="https://th.bing.com/th/id/R.eed5bfa42d81ad17ff82081c175f16a8?rik=YzTIlpiytj%2fW0w&pid=ImgRaw&r=0" alt="Drive Mad">
                     </a>
@@ -33,11 +38,11 @@
                         <a href="javascript:void(0);" onclick="redirectToGame1()">Drive Mad</a>
                     </h3>
                 </div>
-                <div class="game-card">
+                <div class="game-card" data-game-name="Cool Game 2">
                     <img src="game2.jpg" alt="Game 2">
                     <h3>Cool Game 2</h3>
                 </div>
-                <div class="game-card">
+                <div class="game-card" data-game-name="Cool Game 3">
                     <img src="game3.jpg" alt="Game 3">
                     <h3>Cool Game 3</h3>
                 </div>
@@ -63,6 +68,21 @@
         function redirectToGame1() {
             const encodedURL = 'aHR0cHM6Ly9idWJza3FxMTIuZ2l0aHViLmlvL2RyaXZlLXRpbWU='; // Base64 encoded URL
             window.location.href = atob(encodedURL);
+        }
+
+        function searchGames() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const gameList = document.getElementById('gameList');
+            const games = gameList.getElementsByClassName('game-card');
+
+            for (let i = 0; i < games.length; i++) {
+                const gameName = games[i].getAttribute('data-game-name').toLowerCase();
+                if (gameName.includes(input)) {
+                    games[i].style.display = ""; // Show game
+                } else {
+                    games[i].style.display = "none"; // Hide game
+                }
+            }
         }
     </script>
 </body>
