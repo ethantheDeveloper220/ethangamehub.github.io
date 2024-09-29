@@ -125,6 +125,16 @@
         .form-container button:hover {
             background-color: #0056b3;
         }
+
+        /* Styles for the embedded game frame */
+        #embeddedGame {
+            display: none;
+            width: 100%;
+            height: 500px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -154,40 +164,37 @@
                 <h2>Featured Games</h2>
                 <div class="game-grid" id="gameList">
                     <div class="game-card" data-game-name="Drive Mad">
-                        <a href="javascript:void(0);" onclick="redirectToGame1()">
+                        <a href="javascript:void(0);" onclick="openEmbeddedGame('Drive Mad')">
                             <img src="https://th.bing.com/th/id/R.eed5bfa42d81ad17ff82081c175f16a8?rik=YzTIlpiytj%2fW0w&pid=ImgRaw&r=0" alt="Drive Mad">
                         </a>
                         <h3>
-                            <a href="javascript:void(0);" onclick="redirectToGame1()">Drive Mad</a>
+                            <a href="javascript:void(0);" onclick="openEmbeddedGame('Drive Mad')">Drive Mad</a>
                         </h3>
                     </div>
                     <div class="game-card" data-game-name="RocketBotRoyale">
-                        <a href="https://rocketbotroyale-5.onrender.com/" target="_blank">
+                        <a href="javascript:void(0);" onclick="openEmbeddedGame('RocketBotRoyale')">
                             <img src="https://static.wixstatic.com/media/d0c5be_340d3a8d80104f39b07a297380a979a0~mv2.png/v1/fill/w_560,h_314,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/rbr-logo.png" alt="RocketBotRoyale">
                         </a>
                         <h3>
-                            <a href="https://rocketbotroyale-5.onrender.com/" target="_blank">RocketBotRoyale</a>
+                            <a href="javascript:void(0);" onclick="openEmbeddedGame('RocketBotRoyale')">RocketBotRoyale</a>
                         </h3>
                     </div>
                     <div class="game-card" data-game-name="Basket Bros">
-                        <a href="https://bubskqq12.github.io/Basket-moms/" target="_blank">
+                        <a href="javascript:void(0);" onclick="openEmbeddedGame('Basket Bros')">
                             <img src="https://images.crazygames.com/games/basketbros/cover-1586360611838.jpg?auto=format%2Ccompress&q=45&cs=strip&ch=DPR&w=1200&h=630&fit=crop" alt="Basket Bros">
                         </a>
                         <h3>
-                            <a href="https://bubskqq12.github.io/Basket-moms/" target="_blank">Basket Bros</a>
+                            <a href="javascript:void(0);" onclick="openEmbeddedGame('Basket Bros')">Basket Bros</a>
                         </h3>
                     </div>
                     <div class="game-card" data-game-name="Slope">
-                        <a href="https://bubskqq12.github.io/Slope-Game/" target="_blank">
+                        <a href="javascript:void(0);" onclick="openEmbeddedGame('Slope')">
                             <img src="https://th.bing.com/th/id/OIP.1yT2wVchG7yNHCn4r_ozZAHaEo?rs=1&pid=ImgDetMain" alt="Slope Game">
                         </a>
                         <h3>
-                            <a href="https://bubskqq12.github.io/Slope-Game/" target="_blank">Slope</a>
+                            <a href="javascript:void(0);" onclick="openEmbeddedGame('Slope')">Slope</a>
                         </h3>
                     </div>
                     <div class="game-card" data-game-name="Retro Bowl">
-                        <a href="https://asgfasgasgags.github.io/files/RetroBowl/" target="_blank">
-                            <img src="https://play-lh.googleusercontent.com/Z1MOuuiD05ZN5LkVmMEvKF0mqAc-FknaQ2j8s4dZiO-LSPQX4EEA3RVJdlQEtxe96ok" alt="Retro Bowl">
-                        </a>
-                        <h3>
-                            <a href="https://asgfasgasgags.github.io/files/RetroBowl/" target="_
+                        <a href="javascript:void(0);" onclick="openEmbeddedGame('Retro Bowl')">
+                            <img src="https://play-lh.googleusercontent.com/Z1MOuuiD05ZN5L
