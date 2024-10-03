@@ -80,7 +80,7 @@ h2 {
 .game-grid {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
     gap: 20px;
 }
 
@@ -94,8 +94,7 @@ h2 {
 }
 
 .game-card img {
-    max-width: 100%;
-    height: auto; /* Maintains aspect ratio */
+    width: 100%;
     border-radius: 8px 8px 0 0;
 }
 
@@ -112,6 +111,15 @@ h2 {
 
 .game-card:hover {
     transform: translateY(-5px);
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 0); }
+    25% { transform: translate(-1px, 0); }
+    50% { transform: translate(1px, 0); }
+    75% { transform: translate(-1px, 0); }
+    100% { transform: translate(0, 0); }
 }
 
 #request-game {
