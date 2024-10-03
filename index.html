@@ -1,4 +1,4 @@
-Add where when some go on the website it change the url name about:blank it just looks like it <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -158,31 +158,9 @@ Add where when some go on the website it change the url name about:blank it just
             <section id="game-iframe">
                 <iframe id="gameFrame" src=""></iframe>
                 <button id="fullscreenBtn" onclick="toggleFullscreen()">Full Screen</button>
+                <button id="playInBrowserBtn" onclick="playInBrowser()">Play in Browser</button>
             </section>
         </div>
     </main>
 
     <footer>
-        <p>Unblocked Games Hub &copy; 2024</p>
-    </footer>
-
-    <script>
-        function showGame(url) {
-            document.getElementById('gameFrame').src = url;
-        }
-
-        function toggleFullscreen() {
-            const iframe = document.getElementById('gameFrame');
-            if (iframe.requestFullscreen) {
-                iframe.requestFullscreen();
-            } else if (iframe.mozRequestFullScreen) { // Firefox
-                iframe.mozRequestFullScreen();
-            } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari, Opera
-                iframe.webkitRequestFullscreen();
-            } else if (iframe.msRequestFullscreen) { // IE/Edge
-                iframe.msRequestFullscreen();
-            }
-        }
-    </script>
-</body>
-</html>
