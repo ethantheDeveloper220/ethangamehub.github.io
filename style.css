@@ -1,110 +1,71 @@
-/* General Reset */
-* {
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+.container {
+    width: 80%;
+    margin: 0 auto;
 }
 
-/* Header Styling */
 header {
-    background-color: #007bff;
+    background-color: #4CAF50;
     color: white;
-    padding: 20px;
+    padding: 20px 0;
     text-align: center;
 }
 
-header h1 {
-    font-size: 36px;
-    margin-bottom: 10px;
-}
-
 nav ul {
-    list-style: none;
-    display: inline-block;
+    list-style-type: none;
+    padding: 0;
 }
 
 nav ul li {
     display: inline;
-    margin-right: 15px;
+    margin: 0 15px;
 }
 
 nav ul li a {
     color: white;
-    font-size: 18px;
     text-decoration: none;
-    font-weight: bold;
 }
 
-nav ul li a:hover {
-    color: #ffcc00;
+h1, h2, h3 {
+    margin: 20px 0;
 }
 
-/* Search Section */
 #search {
-    margin: 20px auto;
     text-align: center;
 }
 
-#search input[type="text"] {
+#searchInput {
+    width: 80%;
     padding: 10px;
-    width: 300px;
-    font-size: 16px;
-    border: 2px solid #007bff;
-    border-radius: 5px;
 }
 
-#search input[type="text"]:focus {
-    border-color: #ffcc00;
-}
-
-/* Featured Games Section */
-#featured h2 {
-    text-align: center;
-    font-size: 28px;
-    margin-bottom: 20px;
-    color: #007bff;
+#featured {
+    margin: 20px 0;
 }
 
 .game-grid {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     gap: 20px;
+    justify-content: center;
 }
 
 .game-card {
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 15px;
-    width: 300px;
-    text-align: center;
-}
-
-.game-card img {
-    max-width: 100%;
+    border: 1px solid #ccc;
     border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    width: 200px;
 }
 
-.game-card h3 {
-    margin-top: 10px;
-    font-size: 18px;
-    color: #007bff;
-}
-
-/* Footer Styling */
 footer {
-    background-color: #007bff;
+    background-color: #4CAF50;
     color: white;
     text-align: center;
-    padding: 15px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    padding: 10px 0;
 }
