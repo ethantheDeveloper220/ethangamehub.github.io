@@ -99,6 +99,15 @@
             height: 600px;
             border: none;
         }
+
+        /* Clock styling */
+        #clock {
+            font-size: 20px;
+            color: #007bff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -159,6 +168,11 @@
                 <iframe id="gameFrame" src=""></iframe>
                 <button id="fullscreenBtn" onclick="toggleFullscreen()">Full Screen</button>
             </section>
+
+            <!-- Clock section -->
+            <section id="clockSection">
+                <div id="clock"></div>
+            </section>
         </div>
     </main>
 
@@ -170,6 +184,7 @@
         // Change URL to about:blank on page load
         window.onload = function() {
             window.history.replaceState(null, '', 'about:blank');
+            showClock();
         };
 
         function showGame(url) {
@@ -182,11 +197,4 @@
                 iframe.requestFullscreen();
             } else if (iframe.mozRequestFullScreen) { // Firefox
                 iframe.mozRequestFullScreen();
-            } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari, Opera
-                iframe.webkitRequestFullscreen();
-            } else if (iframe.msRequestFullscreen) { // IE/Edge
-                iframe.msRequestFullscreen();
-            }
-        }
-    </script>
-</body>
+            } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari
