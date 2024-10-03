@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unblocked Games</title>
+    <title>Unblocked Games Hub</title>
     <link rel="stylesheet" href="style.css">
     <style>
         /* Add your existing styles here */
@@ -33,65 +33,80 @@
             text-decoration: underline;
         }
 
-        /* Additional styles for your website can go here */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background-color: #007bff;
-            color: white;
-            padding: 20px 0;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-        }
-        nav ul li {
-            display: inline;
-            margin-right: 20px;
-        }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-        }
+        /* Game Grid Styles */
         .game-grid {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
+            justify-content: space-between;
         }
+
         .game-card {
             background-color: white;
             border-radius: 5px;
             padding: 10px;
             text-align: center;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            cursor: pointer;
+            transition: all 0.3s ease;
         }
-        .game-card img {
-            max-width: 100%;
-            border-radius: 5px;
+
+        .game-card:hover {
+            transform: scale(1.05);
         }
-        footer {
-            text-align: center;
-            padding: 10px 0;
-            background-color: #007bff;
-            color: white;
-            position: relative;
-            bottom: 0;
+
+        /* Fixed Ember Display */
+        #ember-display {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 300px;
+            height: 200px;
+            z-index: 1000;
+            border: 3px solid #1e90ff;
+            background-color: white;
+            display: none; /* Hidden initially */
+        }
+
+        #ember-display iframe {
             width: 100%;
+            height: 100%;
+            border: none;
         }
-        /* Add styles for the tab logo */
+
+        /* Fullscreen Button */
+        .fullscreen-btn {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background-color: #1e90ff;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .fullscreen-btn:hover {
+            background-color: #ffd700;
+        }
+
+        /* Fullscreen Styles */
+        .fullscreen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 1001;
+        }
+
+        /* Tab logo style */
         .tab-logo {
-            width: 24px; /* Adjust size as needed */
+            width: 24px; 
             vertical-align: middle;
-            margin-right: 8px; /* Space between logo and text */
+            margin-right: 8px; 
         }
     </style>
 </head>
@@ -121,58 +136,47 @@
             <section id="featured">
                 <h2>Featured Games</h2>
                 <div class="game-grid" id="gameList">
-                    <div class="game-card" data-game-name="Drive Mad">
-                        <a href="javascript:void(0);" onclick="redirectToGame1()">
-                            <img src="https://th.bing.com/th/id/R.eed5bfa42d81ad17ff82081c175f16a8?rik=YzTIlpiytj%2fW0w&pid=ImgRaw&r=0" alt="Drive Mad">
-                        </a>
-                        <h3>
-                            <a href="javascript:void(0);" onclick="redirectToGame1()">Drive Mad</a>
-                        </h3>
+                    <div class="game-card" onclick="showGame('https://nutsimulator.github.io/')">
+                        <img src="https://github.com/bubskqq12/nutgame-cookie-copy/blob/master/images/icon.png?raw=true" alt="Nut Game">
+                        <h3>Nut Game</h3>
                     </div>
-                    <div class="game-card" data-game-name="RocketBotRoyale">
-                        <a href="https://rocketbotroyale-5.onrender.com/" target="_blank">
-                            <img src="https://static.wixstatic.com/media/d0c5be_340d3a8d80104f39b07a297380a979a0~mv2.png/v1/fill/w_560,h_314,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/rbr-logo.png" alt="RocketBotRoyale">
-                        </a>
-                        <h3>
-                            <a href="https://rocketbotroyale-5.onrender.com/" target="_blank">RocketBotRoyale</a>
-                        </h3>
-                    </div>
-                    <div class="game-card" data-game-name="Basket Bros">
-                        <a href="https://bubskqq12.github.io/Basket-moms/" target="_blank">
-                            <img src="https://images.crazygames.com/games/basketbros/cover-1586360611838.jpg?auto=format%2Ccompress&q=45&cs=strip&ch=DPR&w=1200&h=630&fit=crop" alt="Basket Bros">
-                        </a>
-                        <h3>
-                            <a href="https://bubskqq12.github.io/Basket-moms/" target="_blank">Basket Bros</a>
-                        </h3>
-                    </div>
-                    <div class="game-card" data-game-name="Slope">
-                        <a href="https://bubskqq12.github.io/Slope-Game/" target="_blank">
-                            <img src="https://th.bing.com/th/id/OIP.1yT2wVchG7yNHCn4r_ozZAHaEo?rs=1&pid=ImgDetMain" alt="Slope Game">
-                        </a>
-                        <h3>
-                            <a href="https://bubskqq12.github.io/Slope-Game/" target="_blank">Slope</a>
-                        </h3>
-                    </div>
-                    <div class="game-card" data-game-name="Retro Bowl">
-                        <a href="https://asgfasgasgags.github.io/files/RetroBowl/" target="_blank">
-                            <img src="https://play-lh.googleusercontent.com/Z1MOuuiD05ZN5LkVmMEvKF0mqAc-FknaQ2j8s4dZiO-LSPQX4EEA3RVJdlQEtxe96ok" alt="Retro Bowl">
-                        </a>
-                        <h3>
-                            <a href="https://asgfasgasgags.github.io/files/RetroBowl/" target="_blank">Retro Bowl</a>
-                        </h3>
-                    </div>
-                    <div class="game-card" data-game-name="Cookie Clicker">
-                        <a href="https://bubskqq12.github.io/cookie-ya/" target="_blank">
-                            <img src="https://play-lh.googleusercontent.com/Z1MOuuiD05ZN5LkVmMEvKF0mqAc-FknaQ2j8s4dZiO-LSPQX4EEA3RVJdlQEtxe96ok" alt="Cookie Clicker">
-                        </a>
-                        <h3>
-                            <a href="https://bubskqq12.github.io/cookie-ya/" target="_blank">Cookie Clicker</a>
-                        </h3>
-                    </div>
-                    <!-- Added Nut Game here -->
-                    <div class="game-card" data-game-name="Nut Game">
-                        <a href="https://nutsimulator.github.io/" target="_blank">
-                            <img src="https://github.com/bubskqq12/nutgame-cookie-copy/blob/master/images/icon.png?raw=true" alt="Nut Game">
-                        </a>
-                        <h3>
-                            <a href="https://nutsimulator
+                    <!-- Add more game cards as needed -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Ember Display (Mini-iframe for game) -->
+    <div id="ember-display">
+        <iframe id="game-iframe" src="" allowfullscreen></iframe>
+        <button class="fullscreen-btn" onclick="toggleFullscreen()">Fullscreen</button>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Unblocked Games Hub. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function showGame(gameUrl) {
+            // Display the embedded iframe
+            var emberDisplay = document.getElementById('ember-display');
+            var iframe = document.getElementById('game-iframe');
+            iframe.src = gameUrl; // Set the game URL
+            emberDisplay.style.display = 'block'; // Show the iframe
+        }
+
+        function toggleFullscreen() {
+            var emberDisplay = document.getElementById('ember-display');
+            if (!document.fullscreenElement) {
+                emberDisplay.requestFullscreen().catch(err => {
+                    alert(`Error: ${err.message}`);
+                });
+            } else {
+                document.exitFullscreen();
+            }
+        }
+    </script>
+</body>
+</html>
