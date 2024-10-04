@@ -169,17 +169,23 @@
 
     <script>
         function searchGames() {
-            // Add search functionality here
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const games = document.querySelectorAll('.game-card');
+            
+            games.forEach(game => {
+                const gameName = game.querySelector('h3').innerText.toLowerCase();
+                game.style.display = gameName.includes(input) ? '' : 'none';
+            });
         }
+
         function showGame(url) {
             document.getElementById('gameFrame').src = url;
         }
+
         function toggleFullscreen() {
-            // Add fullscreen functionality here
-        }
-        function playInBrowser() {
-            // Add functionality to play in the browser here
-        }
-    </script>
-</body>
-</html>
+            const gameFrame = document.getElementById('gameFrame');
+            if (!document.fullscreenElement) {
+                gameFrame.requestFullscreen().catch(err => {
+                    alert(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
+                });
+            } else {
