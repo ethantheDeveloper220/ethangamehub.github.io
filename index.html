@@ -99,6 +99,78 @@
             height: 600px;
             border: none;
         }
+
+        /* Styles for the Beta Access Section */
+        #beta-access {
+            text-align: center;
+            background-color: #f9f9f9;
+            padding: 50px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        #betaAccessBtn {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+
+        #betaAccessBtn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .beta-purchase-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .beta-purchase-btn:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 <body>
@@ -147,45 +219,5 @@
                         <img src="https://play-lh.googleusercontent.com/Z1MOuuiD05ZN5LkVmMEvKF0mqAc-FknaQ2j8s4dZiO-LSPQX4EEA3RVJdlQEtxe96ok" alt="Retro Bowl">
                         <h3>Retro Bowl</h3>
                     </a>
-                    <a href="javascript:void(0)" class="game-card" onclick="showGame('https://ethantheDeveloper220.github.io/cookie-ya/')">
-                        <img src="https://play-lh.googleusercontent.com/Z1MOuuiD05ZN5LkVmMEvKF0mqAc-FknaQ2j8s4dZiO-LSPQX4EEA3RVJdlQEtxe96ok" alt="Cookie Clicker">
-                        <h3>Cookie Clicker</h3>
-                    </a>
                 </div>
-            </section>
-
-            <!-- Iframe section to display the games -->
-            <section id="game-iframe">
-                <iframe id="gameFrame" src=""></iframe>
-                <button id="fullscreenBtn" onclick="toggleFullscreen()">Full Screen</button>
-                <button id="playInBrowserBtn" onclick="playInBrowser()">Play in Browser</button>
-            </section>
-        </div>
-    </main>
-
-    <footer>
-        <p>EE Game Hub</p>
-    </footer>
-
-    <script>
-        function searchGames() {
-            const input = document.getElementById('searchInput').value.toLowerCase();
-            const games = document.querySelectorAll('.game-card');
-            
-            games.forEach(game => {
-                const gameName = game.querySelector('h3').innerText.toLowerCase();
-                game.style.display = gameName.includes(input) ? '' : 'none';
-            });
-        }
-
-        function showGame(url) {
-            document.getElementById('gameFrame').src = url;
-        }
-
-        function toggleFullscreen() {
-            const gameFrame = document.getElementById('gameFrame');
-            if (!document.fullscreenElement) {
-                gameFrame.requestFullscreen().catch(err => {
-                    alert(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
-                });
-            } else {
+            </section
