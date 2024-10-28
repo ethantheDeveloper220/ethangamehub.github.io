@@ -1,67 +1,174 @@
-<!-- Continuing from where your HTML left off -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unblocked Games</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Add your existing styles here */
+        
+        /* Styles for the 404 error message */
+        #error404 {
+            display: none; /* Hidden by default */
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+            padding: 50px;
+            font-family: Arial, sans-serif;
+        }
+        #error404 h1 {
+            font-size: 50px;
+            color: #007bff;
+        }
+        #error404 p {
+            font-size: 20px;
+        }
+        #error404 a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        #error404 a:hover {
+            text-decoration: underline;
+        }
 
-<!-- Beta Access Section -->
-<section id="beta-access">
-    <h2>Beta Access Required</h2>
-    <p>Enter your access key to unlock the games.</p>
-    <input type="text" id="purchaseKey" placeholder="Enter your access key here...">
-    <button id="verifyKeyBtn" onclick="verifyKey()">Verify Key</button>
-</section>
+        /* Additional styles for your website can go here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px 0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        .game-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .game-card {
+            background-color: white;
+            border-radius: 5px;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .game-card img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #007bff;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .tab-logo {
+            width: 24px;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
 
-<section id="error404">
-    <h1>404 Error</h1>
-    <p>Sorry, the page you are looking for could not be found.</p>
-    <a href="#home">Return to Home</a>
-</section>
+        /* Styles for the purchase gateway section */
+        #purchase-gateway {
+            text-align: center;
+            background-color: #f9f9f9;
+            padding: 50px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        #purchaseKey {
+            padding: 10px;
+            font-size: 18px;
+            width: 80%;
+            max-width: 400px;
+        }
+        #verifyKeyBtn {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+        #verifyKeyBtn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Unblocked Games Hub</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home"><img class="tab-logo" src="https://png.pngtree.com/png-vector/20240513/ourmid/pngtree-map-pointer-game-controller-icon-png-image_12443047.png" alt="Game Icon">Home</a></li>
+                    <li><a href="#popular-games"><img class="tab-logo" src="https://png.pngtree.com/png-vector/20240513/ourmid/pngtree-map-pointer-game-controller-icon-png-image_12443047.png" alt="Game Icon">Popular Games</a></li>
+                    <li><a href="#categories"><img class="tab-logo" src="https://png.pngtree.com/png-vector/20240513/ourmid/pngtree-map-pointer-game-controller-icon-png-image_12443047.png" alt="Game Icon">Categories</a></li>
+                    <li><a href="#request-game"><img class="tab-logo" src="https://png.pngtree.com/png-vector/20240513/ourmid/pngtree-map-pointer-game-controller-icon-png-image_12443047.png" alt="Game Icon">Request a Game</a></li>
+                    <li><a href="#other-sites"><img class="tab-logo" src="https://png.pngtree.com/png-vector/20240513/ourmid/pngtree-map-pointer-game-controller-icon-png-image_12443047.png" alt="Game Icon">Other Sites</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-<iframe id="gameIframe" style="display:none;"></iframe>
+    <main>
+        <div id="purchase-gateway">
+            <h2>Enter Access Key</h2>
+            <input type="text" id="purchaseKey" placeholder="Enter your access key here...">
+            <button id="verifyKeyBtn" onclick="verifyKey()">Verify Key</button>
+        </div>
 
-</main>
+        <section id="featured">
+            <h2>Featured Games</h2>
+            <div class="game-grid" id="gameList">
+                <!-- Your game cards go here -->
+            </div>
+        </section>
+    </main>
 
-<footer>
-    <p>&copy; 2024 Unblocked Games Hub</p>
-</footer>
+    <script>
+        function verifyKey() {
+            const keyInput = document.getElementById('purchaseKey').value;
+            const correctKey = "YOUR_KEY_HERE"; // Set your correct key here
 
-<script>
-// Game display function
-function showGame(gameURL) {
-    const iframe = document.getElementById('gameIframe');
-    iframe.src = gameURL;
-    iframe.style.display = 'block';
-}
+            if (keyInput === correctKey) {
+                alert("Access granted! Redirecting to the site...");
+                // Code to continue to the site
+            } else {
+                alert("Invalid key! Redirecting to purchase page...");
+                window.location.href = "https://buy.stripe.com/5kA1583Kyc0VbwQ7sM";
+            }
+        }
+    </script>
 
-// Key verification setup
-const validKeys = [
-    "I7X6Z4Y2W750EMSSP5XE1RCK55GX",
-    "5PZIUBZVR5Z0D9G0YEUBH7OUB17U",
-    "GHJZUOB1J9XVKVMQLMALZ4NGKACX",
-    "F6O4TU6FQQERQCOG7FX0K1E767M2",
-    "IAW9N47OKOTPJV4KVFRI06SV5XMX",
-    // Add the rest of your 100 keys here
-];
-
-function verifyKey() {
-    const keyInput = document.getElementById('purchaseKey').value;
-    if (validKeys.includes(keyInput)) {
-        alert("Access granted! Enjoy the games.");
-        document.getElementById('beta-access').style.display = 'none';
-        document.getElementById('featured').style.display = 'block';
-    } else {
-        alert("Invalid key! Redirecting to purchase page...");
-        window.location.href = "https://buy.stripe.com/5kA1583Kyc0VbwQ7sM";
-    }
-}
-
-// Basic search function (if needed for game search)
-function searchGames() {
-    const input = document.getElementById('searchInput').value.toLowerCase();
-    const games = document.querySelectorAll('.game-card');
-    
-    games.forEach(game => {
-        const title = game.querySelector('h3').textContent.toLowerCase();
-        game.style.display = title.includes(input) ? '' : 'none';
-    });
-}
-</script>
+    <footer>
+        <p>&copy; 2024 Unblocked Games Hub</p>
+    </footer>
 </body>
 </html>
