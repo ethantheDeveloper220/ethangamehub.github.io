@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <style>
         /* Add your existing styles here */
-        
+
         /* Styles for the 404 error message */
         #error404 {
             display: none; /* Hidden by default */
@@ -171,6 +171,34 @@
         .beta-purchase-btn:hover {
             background-color: #0056b3;
         }
+
+        /* Styles for Key Entry Section */
+        #key-entry {
+            text-align: center;
+            margin: 20px 0;
+        }
+        #key-entry input {
+            padding: 10px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        #key-entry button {
+            padding: 10px 20px;
+            margin-left: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #key-entry button:hover {
+            background-color: #0056b3;
+        }
+        #key-message {
+            margin-top: 10px;
+            color: red;
+        }
     </style>
 </head>
 <body>
@@ -191,12 +219,11 @@
 
     <main>
         <div id="content">
-            <!-- Purchase Gateway Section -->
-            <section id="purchase-gateway">
-                <h2>Enter Access Key</h2>
-                <input type="text" id="accessKey" placeholder="Enter your access key">
-                <button onclick="verifyKey()">Submit</button>
-                <p id="keyMessage" style="color: red; display: none;"></p>
+            <section id="key-entry">
+                <h2>Enter Your Purchase Key</h2>
+                <input type="text" id="keyInput" placeholder="Enter your key here">
+                <button id="validateKeyBtn">Validate Key</button>
+                <p id="key-message"></p>
             </section>
 
             <section id="search">
@@ -215,13 +242,4 @@
                         <img src="https://static.wixstatic.com/media/d0c5be_340d3a8d80104f39b07a297380a979a0~mv2.png/v1/fill/w_560,h_314,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/rbr-logo.png" alt="RocketBotRoyale">
                         <h3>RocketBotRoyale</h3>
                     </a>
-                    <a href="javascript:void(0)" class="game-card" onclick="showGame('https://ethantheDeveloper220.github.io/Basket-moms/')">
-                        <img src="https://images.crazygames.com/games/basketbros/cover-1586360611838.jpg?auto=format%2Ccompress&q=45&cs=strip&ch=DPR&w=1200&h=630&fit=crop" alt="Basket Bros">
-                        <h3>Basket Bros</h3>
-                    </a>
-                    <a href="javascript:void(0)" class="game-card" onclick="showGame('https://ethantheDeveloper220.github.io/Slope-Game/')">
-                        <img src="https://th.bing.com/th/id/OIP.1yT2wVchG7yNHCn4r_ozZAHaEo?rs=1&pid=ImgDetMain" alt="Slope Game">
-                        <h3>Slope</h3>
-                    </a>
-                    <a href="javascript:void(0)" class="game-card" onclick="showGame('https://asgfasgasgags.github.io/files/RetroBowl/')">
-                        <img src="https://play-lh.googleusercontent
+                    <a href="javascript:void(
